@@ -44,8 +44,10 @@
 #endif
 %}
 
- /* Solve clone issue */
+ /* Solve std::unique issue by ignoring some functions that use it */
 %ignore *::clone;
+%ignore *::conjugate;
+
 %extend sirf::DataContainer
 {
   DataContainer * my_clone() const
